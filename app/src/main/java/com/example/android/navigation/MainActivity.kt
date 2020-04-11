@@ -32,6 +32,8 @@ class MainActivity : AppCompatActivity() {
 
         // integration navController with actionBar !!!!!!!!!!!
         val navController = this.findNavController(R.id.myNavHostFragment)
+
+
         NavigationUI.setupActionBarWithNavController(this, navController)
 
 
