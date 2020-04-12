@@ -80,18 +80,17 @@ class GameWonFragment : Fragment() {
         val args = arguments?.let { GameWonFragmentArgs.fromBundle(it) }
 
 
-        /*
         var shareIntent: Intent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"
         shareIntent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_success_text, args?.numCorrect, args?.numQuestions))
         return shareIntent
-        */
+/* changed to compile kotlin to java8 and ... not working...
         // modern compact way..
         return ShareCompat.IntentBuilder.from(activity)
                 .setText(getString(R.string.share_success_text, args?.numCorrect, args?.numQuestions))
                 .setType("text/plain")
                 .intent
-
+*/
     }
 
     private fun shareSuccess(){
