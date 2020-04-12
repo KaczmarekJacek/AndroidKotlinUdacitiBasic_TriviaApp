@@ -20,6 +20,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
+import androidx.navigation.NavDestination
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -29,7 +30,7 @@ import com.example.android.navigation.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
     // drawer ON
     private lateinit var drawerLayout: DrawerLayout
-//    private lateinit var appBarConfiguration : AppBarConfiguration
+    private lateinit var appBarConfiguration : AppBarConfiguration
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -45,10 +46,14 @@ class MainActivity : AppCompatActivity() {
         // drawer ON
         drawerLayout = binding.drawerLayout
         NavigationUI.setupActionBarWithNavController(this, navController, drawerLayout)
+        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
+
+
+        //added listener
+
+
         NavigationUI.setupWithNavController(binding.navView, navController)
 
-//        appBarConfiguration = AppBarConfiguration(navController.graph, drawerLayout)
-//        NavigationUI.setupWithNavController(binding.navView, navController)
 
     }
 
@@ -61,6 +66,8 @@ class MainActivity : AppCompatActivity() {
 
         //replaces arror back (nav button)  with navigation draw button...
 // -> no such function (on video L3 39 udacity TrivaApp       return NavigationUI.navigateUp(  drawerLayout, navController)
-        return NavigationUI.navigateUp( navController, drawerLayout)
+//        return NavigationUI.navigateUp( navController, drawerLayout)
+
+        return NavigationUI.navigateUp(navController, appBarConfiguration)
     }
 }
