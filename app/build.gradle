@@ -65,6 +65,9 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment-ktx:2.2.1'
     implementation 'androidx.navigation:navigation-ui-ktx:2.2.1'
 
-//    added for drawer
-//    implementation "com.google.android.material:material:$version_material"
+//    added for drawer ?? what is it??? - its first line after // Material Design line 63
+//    implementation "com.google.android.material:material:$supportlibVersion"
+
+
+
 }
