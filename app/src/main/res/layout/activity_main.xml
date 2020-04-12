@@ -17,12 +17,6 @@
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <!--    for drawer-->
-    <!--         two xmlns added from www  https://developer.android.com/reference/com/google/android/material/navigation/NavigationView-->
-<!--
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
--->
 
     <androidx.drawerlayout.widget.DrawerLayout
         android:id="@+id/drawerLayout"
@@ -48,11 +42,12 @@
         <!--for drawer-->
 
         <com.google.android.material.navigation.NavigationView
-            android:id="@+id/navigation"
+            android:id="@+id/navView"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="start"
-            app:menu="@menu/navdrawer_menu" />
+            app:menu="@menu/navdrawer_menu"
+            app:headerLayout="@layout/nav_header"/>
     </androidx.drawerlayout.widget.DrawerLayout>
 
 </layout>
